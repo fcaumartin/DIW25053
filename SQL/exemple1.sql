@@ -51,3 +51,15 @@ where titre='representant' AND nodep=35 AND salaire>20000;
 select nom, titre, salaire
 from employe
 where titre='representant' OR titre='president';
+
+
+select salaire, tauxcom, salaire*tauxcom/100 as 'prime'
+from employe
+where tauxcom null;
+
+
+
+
+
+select nom, SUBSTR(nom, 1, 3)
+from employe;
