@@ -82,7 +82,110 @@ select * from employe where titre NOT IN (
 select * from dept LEFT join employe on employe.nodep=dept.nodept;
 
 
+select * from employe;
+select * from dept;
+
+-- 44. Calculer le nombre d'employés de chaque titre
+select titre, count(*)
+from employe
+group by titre;
+
+-- 45. Calculer la moyenne des salaires et leur somme, par région.
+select d.noregion, avg(e.salaire), sum(e.salaire)
+from employe e
+join dept d on e.nodep=d.nodept
+group by d.noregion;
 
 
-select MAX(salaire) from employe;
+
+
+
+
+select titre, count(*)
+from employe e
+join dept d on e.nodep=d.nodept
+where salaire>20000
+group by titre
+having count(*)>1
+order by 2 desc;
+
+
+
+-- 46. Afficher les numéros des départements ayant au moins 3 employés.
+select d.nom, count(*)
+from employe e
+join dept d on e.nodep=d.nodept
+group by d.nom
+having count(*)>=3;
+
+
+
+
+
+
+
+-- 47. Afficher les lettres qui sont l'initiale d'au moins trois employés.
+select substring(prenom, 1, 1) as 'initiale', count(*) as 'nombre'
+from employe
+group by substring(prenom, 1, 1)
+having count(*)>=3;
+
+
+
+
+
+
+
+-- 48. Rechercher le salaire maximum et le salaire minimum parmi tous les
+-- salariés et l'écart entre les deux.
+select min(salaire), max(salaire), max(salaire) - min(salaire)
+from employe;
+
+
+
+
+-- 49. Rechercher le nombre de titres différents.
+select count( distinct titre), count(titre)
+from employe;
+
+
+-- 50. Pour chaque titre, compter le nombre d'employés possédant ce titre.
+select titre, count(*)
+from employe
+group by titre;
+
+
+
+
+
+
+
+
+-- 51. Pour chaque nom de département, afficher le nom du département et
+-- le nombre d'employés.
+select d.nom, count(*)
+from employe e
+join dept d on e.nodep=d.nodept
+group by d.nom;
+
+
+
+-- 52. Rechercher les titres et la moyenne des salaires par titre dont la
+-- moyenne est supérieure à la moyenne des salaires des Représentants.
+select titre, avg(salaire)
+from employe
+group by titre
+having avg(salaire)> (
+    select avg(salaire) from employe where titre='representant'
+);
+
+
+
+
+
+
+-- 53. Rechercher le nombre de salaires renseignés et le nombre de taux de
+-- commission renseignés.
+select count(salaire), count(tauxcom)
+from employe;
 
