@@ -15,6 +15,9 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-12 text-end">
+                <a href="ajout_form.php" class="btn btn-primary">Ajouter</a>
+            </div>
             <?php foreach ($tableau as $disc): ?>
                 <section class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-3">
                     <div>
