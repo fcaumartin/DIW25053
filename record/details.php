@@ -36,6 +36,9 @@
                     <div>
                         <?= $disc["disc_year"] ?>
                     </div>
+                    <div>
+                        <a href="modif_form.php?id=<?= $disc["disc_id"] ?>" class="btn btn-primary">Modifier</a>
+                    </div>
                 </section>
         </div>
     </div>
