@@ -4,7 +4,7 @@
     $requete = $db->query("
         SELECT * 
         FROM disc d
-        JOIN artist a ON a.artist_id=d.artist_id
+        LEFT JOIN artist a ON a.artist_id=d.artist_id
         ORDER BY d.disc_title ASC;
     ");
     $tableau = $requete->fetchAll();
