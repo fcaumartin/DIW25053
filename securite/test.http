@@ -1,0 +1,5 @@
+
+POST http://127.0.0.1:8000/ajout_script.php
+Content-Type: application/x-www-form-urlencoded
+
+nom=toto&prenom=titi
