@@ -39,6 +39,13 @@
                     <div>
                         <a href="modif_form.php?id=<?= $disc["disc_id"] ?>" class="btn btn-primary">Modifier</a>
                     </div>
+                    <div>
+                        <a 
+                            href="script_delete.php?id=<?= $disc["disc_id"] ?>" 
+                            class="btn btn-danger"
+                            onclick="return window.confirm('Êtes vous sûr ?');"
+                        >Supprimer</a>
+                    </div>
                 </section>
         </div>
     </div>
