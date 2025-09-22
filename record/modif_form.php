@@ -48,13 +48,28 @@
     </div>
     <div>
         Image
-        <input type="file" name="picture">
+        <input type="file" name="picture"  onchange="readURL(this);">
+        <img id="picture" src="/pictures/<?= $disc["disc_picture"] ?>" alt="" srcset="">
     </div>
     <div>
         <input type="submit" >
     </div>
     <input type="hidden" name="id" value="<?= $disc["disc_id"] ?>">
 </form>
+
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                document.getElementById('picture').src = e.target.result;
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
 
 <?php
     require("footer.php");
