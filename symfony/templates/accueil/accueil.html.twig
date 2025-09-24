@@ -1,8 +1,28 @@
 {% extends 'base.html.twig' %}
 
 
-{% block body %}
+{% block central %}
 
 <h1>Accueil</h1>
 
+<div>
+    <img src="{{ asset('/images/image1.png') }}" alt="" srcset="">
+</div>
+
+{% endblock %}
+
+
+{% block css %}
+    <style>
+        div {
+            border: 1px dotted red;
+        }
+    </style>
+{% endblock %}
+
+
+{% block script %}
+    <script>
+        console.log("coucou");
+    </script>
 {% endblock %}
