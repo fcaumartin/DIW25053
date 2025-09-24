@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Disc{% endblock %}
+
+{% block body %}
+    <h1>Disc</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ disc.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ disc.title }}</td>
+            </tr>
+            <tr>
+                <th>Year</th>
+                <td>{{ disc.year }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ disc.label }}</td>
+            </tr>
+            <tr>
+                <th>Genre</th>
+                <td>{{ disc.genre }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ disc.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_disc_index') }}">back to list</a>
+
+    <a href="{{ path('app_disc_edit', {'id': disc.id}) }}">edit</a>
+
+    {{ include('disc/_delete_form.html.twig') }}
+{% endblock %}

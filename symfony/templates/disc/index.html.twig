@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Disc index{% endblock %}
+
+{% block body %}
+    <h1>Disc index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Label</th>
+                <th>Genre</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for disc in discs %}
+            <tr>
+                <td>{{ disc.id }}</td>
+                <td>{{ disc.title }}</td>
+                <td>{{ disc.year }}</td>
+                <td>{{ disc.label }}</td>
+                <td>{{ disc.genre }}</td>
+                <td>{{ disc.price }}</td>
+                <td>
+                    <a href="{{ path('app_disc_show', {'id': disc.id}) }}">show</a>
+                    <a href="{{ path('app_disc_edit', {'id': disc.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_disc_new') }}">Create new</a>
+{% endblock %}

@@ -4,11 +4,17 @@
 {% block central %}
 <h1>test</h1>
 
-<div>
-    {{ nom | upper }}
-</div>
+     {% dump(discs) %}
 
-<div>
-    {{ prenom | title }}
-</div>
+    {% for disc in discs %}
+
+        <div>
+            {{ disc.title }}
+            {{ disc.artist.name }}
+            <hr>
+        </div>
+
+    {% endfor %}
+
+
 {% endblock %}

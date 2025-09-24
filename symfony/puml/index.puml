@@ -1,0 +1,26 @@
+@startuml
+class Disc {
+	**id : int**
+	title : string
+	year : int
+	label : string
+	genre : string
+	price : string
+	<color:#0000dd>artist : Artist</color>
+}
+
+class Artist {
+	**id : int**
+	name : string
+	url : string
+	<color:#0000dd>discs : Disc[]</color>
+}
+
+Disc "*"--"1" Artist
+
+
+hide methods
+
+hide circle
+
+@enduml
