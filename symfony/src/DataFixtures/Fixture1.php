@@ -11,29 +11,42 @@ class Fixture1 extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $a1 = new Artist();
-        $a1->setName("AC/DC");
-        $a1->setUrl("https://www.acdc.com");
-        $manager->persist($a1);
+        
+        include 'record.php';
 
-        $d1 = new Disc();
-        $d1->setTitle("Back to Black");
-        $d1->setYear(1981);
-        $d1->setArtist($a1);
-        $manager->persist($d1);
+        foreach ($artists as $artist) {
+            $a = new Artist();
+            
+            $a
+                ->setId($artist["artist_id"])
+                ->setName($artist["artist_name"])
+                ->setUrl($artist["artist_url"]);
 
+            $manager->persist($a);
 
-        $d2 = new Disc();
-        $d2->setTitle("Highway to Hell");
-        $d2->setYear(1983);
-        $d2->setArtist($a1);
-        $manager->persist($d2);
+            $metadata = $manager->getClassMetaData(Artist::class);
+            $metadata->setIdGeneratorType(\Doctrine\ORM\Mapping\ClassMetadata::GENERATOR_TYPE_NONE);
+        }
+        $manager->flush();
+        
 
+        $repo = $manager->getRepository(Artist::class);
 
-        $a2 = new Artist();
-        $a2->setName("Muse");
-        $a2->setUrl("https://www.acdc.com");
-        $manager->persist($a2);
+        foreach ($discs as $disc) {
+            $a = new Disc();
+            
+            // dd($disc["artist_id"]);
+            $artist = $repo->find($disc["artist_id"]);
+            // dd($artist);
+
+            $a
+                ->setTitle($disc["disc_title"])
+                ->setYear($disc["disc_year"])
+                ->setArtist($artist);
+                
+            $manager->persist($a);
+
+        }
         
         
         $manager->flush();

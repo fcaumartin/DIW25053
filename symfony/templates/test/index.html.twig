@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 
-{% block central %}
+{% block body %}
 <h1>test</h1>
 
      {% dump(discs) %}
@@ -11,6 +11,7 @@
         <div>
             {{ disc.title }}
             {{ disc.artist.name }}
+            <a href="/details/{{ disc.id }}">Details</a>
             <hr>
         </div>
 

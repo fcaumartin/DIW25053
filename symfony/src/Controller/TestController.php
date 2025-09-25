@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Disc;
 use App\Repository\DiscRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,8 +16,21 @@ final class TestController extends AbstractController
         
         $discs = $repo->findAll();
 
+        
         return $this->render('test/index.html.twig', [ 
             "discs" => $discs
+        ]);
+    }
+
+    #[Route('/details/{id}', name: 'app_details')]
+    public function details(Disc $id): Response
+    {
+        
+        
+
+        
+        return $this->render('test/details.html.twig', [ 
+            "disc" => $id    
         ]);
     }
 }
