@@ -6,6 +6,7 @@ use App\Entity\Artist;
 use App\Entity\Disc;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -21,8 +22,9 @@ class DiscType extends AbstractType
             ->add('price')
             ->add('artist', EntityType::class, [
                 'class' => Artist::class,
-                'choice_label' => 'id',
+                'choice_label' => 'name',
             ])
+            ->add("Envoyer", SubmitType::class)
         ;
     }
 

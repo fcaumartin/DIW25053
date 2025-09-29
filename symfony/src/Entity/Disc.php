@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\DiscRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: DiscRepository::class)]
 class Disc
@@ -18,6 +19,11 @@ class Disc
     private ?string $title = null;
 
     #[ORM\Column]
+    #[Assert\Range(
+        min: 1950,
+        max: 2030,
+        notInRangeMessage: 'You must be between {{ min }}cm and {{ max }}cm tall to enter',
+    )]
     private ?int $year = null;
 
     #[ORM\Column(length: 255, nullable: true)]

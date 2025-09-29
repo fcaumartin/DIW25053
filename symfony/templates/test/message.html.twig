@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<h1>Message</h1>
+
+{{    form_start(form) }}
+        <h1>Formulaire...</h1>
+        
+        {{ form_row(form.email) }}
+
+        {{ form_row(form.sujet) }}
+        
+        {{ form_row(form.message) }}
+
+{{    form_end(form) }}
+
+{% endblock %}
