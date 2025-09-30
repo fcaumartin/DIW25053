@@ -7,23 +7,18 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12 text-end">
-            <a href="/ajout" class="btn btn-primary">Ajouter</a>
-        </div>
 
-        {% for disc in discs %}    
             <div class="col-12 col-sm-6 col-md-4 mb-3">
                 <div class="card" style="">
                     <img src="{{ asset('/images/' ~ disc.picture ) }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ disc.title }}</h5>
                         <p class="card-text"></p>
-                        <a href="/details/{{ disc.id }}" class="btn btn-primary">Détails</a>
-                        <a href="{{ path('app_details', { disc: disc.id }) }}" class="btn btn-primary">Détails</a>
+                        <a href="/details/{{ disc.id }}" class="btn btn-danger">Supprimer</a>
+                        <a href="" class="btn btn-warning">Modifier</a>
                     </div>
                 </div>
             </div>
-        {% endfor %}
     </div>
 </div>
 

@@ -26,7 +26,7 @@ final class TestController extends AbstractController
         ]);
     }
 
-    #[Route('/details/{id}', name: 'app_details')]
+    #[Route('/disc_details/{id}', name: 'app_disc_details')]
     public function details(Disc $id): Response
     {
         

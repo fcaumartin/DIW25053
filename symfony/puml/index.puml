@@ -7,6 +7,7 @@ class Disc {
 	genre : string
 	price : string
 	<color:#0000dd>artist : Artist</color>
+	picture : string
 }
 
 class Artist {

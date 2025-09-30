@@ -42,6 +42,7 @@ class Fixture1 extends Fixture
             $a
                 ->setTitle($disc["disc_title"])
                 ->setYear($disc["disc_year"])
+                ->setPicture($disc["disc_picture"])
                 ->setArtist($artist);
                 
             $manager->persist($a);

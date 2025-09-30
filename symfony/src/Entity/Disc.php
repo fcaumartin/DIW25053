@@ -24,6 +24,7 @@ class Disc
         max: 2030,
         notInRangeMessage: 'You must be between {{ min }}cm and {{ max }}cm tall to enter',
     )]
+    #[Assert\NotNull()]
     private ?int $year = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -38,6 +39,9 @@ class Disc
     #[ORM\ManyToOne(inversedBy: 'discs')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Artist $artist = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $picture = null;
 
     public function getId(): ?int
     {
@@ -112,6 +116,18 @@ class Disc
     public function setArtist(?Artist $artist): static
     {
         $this->artist = $artist;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): static
+    {
+        $this->picture = $picture;
 
         return $this;
     }

@@ -27,7 +27,7 @@ $artists = array(
 
 /* `record`.`disc` */
 $discs = array(
-  array('disc_id' => '1','disc_title' => 'Fugazi','disc_year' => '1985','disc_picture' => '1.png','disc_label' => 'EMI2','disc_genre' => 'Prog2','disc_price' => '155.00','artist_id' => '2'),
+  array('disc_id' => '1','disc_title' => 'Fugazi','disc_year' => '1985','disc_picture' => 'Fugazi.png','disc_label' => 'EMI2','disc_genre' => 'Prog2','disc_price' => '155.00','artist_id' => '2'),
   array('disc_id' => '2','disc_title' => 'Songs for the Deaf','disc_year' => '2002','disc_picture' => 'Songs for the Deaf.jpeg','disc_label' => 'Interscope Records','disc_genre' => 'Rock/Stoner','disc_price' => '12.99','artist_id' => '4'),
   array('disc_id' => '3','disc_title' => 'Harvest Moon','disc_year' => '1992','disc_picture' => 'Harvest Moon.jpeg','disc_label' => 'Reprise Records','disc_genre' => 'Rock','disc_price' => '4.20','artist_id' => '1'),
   array('disc_id' => '4','disc_title' => 'Initials BB','disc_year' => '1968','disc_picture' => 'Initials BB.jpeg','disc_label' => 'Philips','disc_genre' => ' Chanson, Pop Rock','disc_price' => '12.99','artist_id' => '5'),
