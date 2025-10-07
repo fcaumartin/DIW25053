@@ -13,6 +13,13 @@
     </head>
     <body>
         {% include 'navbar.html.twig' %}
+
+        {% for message in app.flashes('notice') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         {% block body %}{% endblock %}
     </body>
 </html>
