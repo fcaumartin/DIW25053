@@ -17,6 +17,13 @@ class Artist {
 	<color:#0000dd>discs : Disc[]</color>
 }
 
+class User {
+	**id : int**
+	email : string
+	roles : array
+	password : string
+}
+
 Disc "*"--"1" Artist
 
 
