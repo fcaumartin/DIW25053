@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+        <div class="col-12">
+            <h1>
+            {{ categorie.libelle }}
+            </h1>
+        </div>
+            {% for plat in categorie.plats %}
+                <div class="col-12 col-sm-6 col-md-4">
+                    <h3>{{ plat.libelle }}</h3>
+                    <img src="{{plat.image}}" class="img-fluid" alt="">
+                    <a href="/panier/add/{{ plat.id }}" class="btn btn-success">Ajouter...</a>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
