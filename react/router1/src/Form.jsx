@@ -2,16 +2,17 @@ import { useNavigate } from "react-router";
 
 function Form() {
 
-const handleClick = () => {
-
     const navigateur = useNavigate();
 
+    const handleClick = () => {
 
-    console.log('clique...')
 
-    navigateur("/list", { replace: true })
 
-}
+        console.log('clique...')
+
+        navigateur("/list")
+
+    }
 
   return (
     <div>
