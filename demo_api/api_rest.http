@@ -1,0 +1,21 @@
+GET http://monsite.com/api/clients
+
+GET http://monsite.com/api/clients/12
+
+DELETE http://monsite.com/api/clients/12
+
+POST http://monsite.com/api/clients
+
+{
+    nom: "",
+    prenom: ""
+}
+
+PUT http://monsite.com/api/clients/12
+
+{
+    nom: "",
+    prenom: ""
+}
+
+
