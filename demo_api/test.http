@@ -1,0 +1,14 @@
+GET http://127.0.0.1:8888/liste.php
+
+
+###
+
+
+POST http://127.0.0.1:8888/post.php
+Content-Type: application/json
+
+{
+    "nom": "aa",
+    "prenom": "bb",
+    "ville": "cc"
+  }
