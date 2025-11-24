@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
-use App\Repository\DiscRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DiscRepository;
+use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: DiscRepository::class)]
+#[ApiResource()]
 class Disc
 {
     #[ORM\Id]

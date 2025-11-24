@@ -1,0 +1,29 @@
+GET https://127.0.0.1:8000/api/artists
+Accept: application/json
+
+###
+
+GET https://127.0.0.1:8000/api/artists/13
+Accept: application/json
+
+###
+
+POST https://127.0.0.1:8000/api/artists
+Content-Type: application/json
+
+{
+    "name": "DevAppli's band"
+}
+
+###
+
+DELETE https://127.0.0.1:8000/api/artists/12
+
+###
+
+PATCH https://127.0.0.1:8000/api/artists/13
+Content-Type: application/merge-patch+json
+
+{
+    "name": "test modif"
+}
