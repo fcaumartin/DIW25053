@@ -1,0 +1,24 @@
+GET https://127.0.0.1:8000/api/login_check
+Content-Type: application/json
+
+{
+    "username": "toto@test.com",
+    "password": "1234"
+}
+
+
+###
+
+
+GET https://127.0.0.1:8000/api/artists
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjQ4NDEyMzcsImV4cCI6MTc2NDg0NDgzNywicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfQ0xJRU5UIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidG90b0B0ZXN0LmNvbSJ9.bURvdwjfylW1hqMXP5GkbGdvU-GCU7xuJV5VSQ1ZpzypOmMZ5oL_wpiLk0qeMmlJELJm9O1OtHMJQuW1o9hXaMGDEtoUWBuF4grLAL0HF5-JF_md9O7AzvUbJ3ORaBVWBTNBayFVAbGChsxWjE0A3PYPGSXMdf-VIQiRZS2Aq15zXrQhBLVt5xkBrCvOhbHsAZstUQtrE38N4EQm1Gkw6zpR0DIp23wcHdqCTTKo07S2Y79W9o-mNmcDRuziw10UQo6UERtxc1h9dQlPXdnRMgYY1_j98yR4zqQ2vkG2hruyo_mu94vmIY1IYa1U6uDcXa3CrsXy_zr5_GpiQT6kqA
+
+
+
+###
+
+
+GET https://127.0.0.1:8000/api/discs
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NjQ4NDEyMzcsImV4cCI6MTc2NDg0NDgzNywicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfQ0xJRU5UIiwiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoidG90b0B0ZXN0LmNvbSJ9.bURvdwjfylW1hqMXP5GkbGdvU-GCU7xuJV5VSQ1ZpzypOmMZ5oL_wpiLk0qeMmlJELJm9O1OtHMJQuW1o9hXaMGDEtoUWBuF4grLAL0HF5-JF_md9O7AzvUbJ3ORaBVWBTNBayFVAbGChsxWjE0A3PYPGSXMdf-VIQiRZS2Aq15zXrQhBLVt5xkBrCvOhbHsAZstUQtrE38N4EQm1Gkw6zpR0DIp23wcHdqCTTKo07S2Y79W9o-mNmcDRuziw10UQo6UERtxc1h9dQlPXdnRMgYY1_j98yR4zqQ2vkG2hruyo_mu94vmIY1IYa1U6uDcXa3CrsXy_zr5_GpiQT6kqA
